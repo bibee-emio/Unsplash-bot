@@ -54,7 +54,7 @@ helpText = '''
 privateButton = types.InlineKeyboardMarkup(
     [
         [
-            types.InlineKeyboardButton('Repo',url='https://github.com/bibee-emio/PyUnsplash-bot'),
+            types.InlineKeyboardButton('Repo',url='https://github.com/bibee-emio/Unsplash-bot'),
             types.InlineKeyboardButton('Help','help-cb')
         ]
     ]
