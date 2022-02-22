@@ -1,0 +1,49 @@
+{
+    "name":"Unsplash-bot",
+    "description":"A Simple Telegram bot for get High Resolution Photos from the Most Powerfull Photo Search Engine in the World; Unsplash",
+    "keywords":[
+        "Python",
+        "Pyrogram",
+        "Unsplash-API",
+        "Telegram"
+    ],
+    "repository":"https://github.com/bibee-emio/Unsplash-bot",
+    "logo":"https://telegra.ph/file/9992ecd83db46a214577a.png",
+    "stack":"heroku-20",
+    "image":"heroku/python",
+    "success_url":"https://github.com/bibee-emio/Unsplash-bot",
+    "env":{
+        "API_ID":{
+            "description":"Your Telegram API-ID.Get from https://my.telegram.org/auth",
+            "value":"",
+            "required":true
+        },
+        "API_HASH":{
+            "description":"Your Telegram API-HASH.Get from https://my.telegram.org/auth",
+            "value":"",
+            "required":true
+        },
+        "BOT_TOKEN":{
+            "description":"Your Telegram Bot Token.Get from @BotFather",
+            "value":"",
+            "required":true
+        },
+        "UNSPLASH_ACCESS_KEY":{
+            "description":"Your Unsplash-API-Access-Key.Get from https://unsplash.com/developers",
+            "value":"",
+            "required":true
+        }
+    },
+    "buildpacks":[
+        {
+            "url":"heroku/python"
+        }
+    ],
+    "formation":{
+        "worker":{
+            "quantity":1,
+            "size":"free"
+        }
+    }
+
+}
