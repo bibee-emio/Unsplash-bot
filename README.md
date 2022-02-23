@@ -4,6 +4,9 @@
 </p>
 </h1>
 
+<h3><strong>Attention</strong></h3>
+* **Don't Deploy the bot for now,It will not work as you expected.**
+
 <h2><b> Bot Usage</b> </h2>
 
 <table>
