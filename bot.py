@@ -45,16 +45,17 @@ helpText = '''
 • /photo | /image | /search     `< Query >`
 - Search photos on Unsplash.
 
-• /random | /rand      `< Count >`
+• /random | /rand
 - Get random photos from Unsplash.
-    `(Count must be a Integer.Specifying the query is not important)`
 '''
+#     `(Count must be a Integer.Specifying the query is not important)`
+
 
 
 privateButton = types.InlineKeyboardMarkup(
     [
         [
-            types.InlineKeyboardButton('Repo',url='https://github.com/bibee-emio/PyUnsplash-bot'),
+            types.InlineKeyboardButton('Repo',url='https://github.com/bibee-emio/Unsplash-bot'),
             types.InlineKeyboardButton('Help','help-cb')
         ]
     ]
@@ -112,21 +113,34 @@ async def searchPhoto(c,msg: types.Message):
     if not results:
         await re.edit('__No photo for your query.Try with deferent keywords.__')
         return
-    
-    ml = []
-    fl = []
 
-    for _ in range(len(results)):                     
-        with open(n:=f"{results[_]['id']}.jpg",'wb') as img:
-            img.write(requests.get(results[_]['urls']['raw']).content)                  
-            ml.append(types.InputMediaPhoto(n))
-            fl.append(n)
 
-    await msg.reply_media_group(ml)
+    with open(n:=f"{results[0]['id']}.jpg",'wb') as img:
+        img.write(requests.get(results[0]['urls']['raw']).content)
     
+    cap = results[0]['alt_description']
+
+    await msg.reply_photo(n,caption=(f'__{cap}__' if isinstance(cap,str) else ""))
     await re.delete()
-    for photo in fl:
-        os.remove(photo)
+    os.remove(n)
+ #   ml = []
+  #  fl = []
+
+
+
+#    for _ in range(len(results)):                     
+ #       with open(n:=f"{results[_]['id']}.jpg",'wb') as img:
+  #          img.write(requests.get(results[_]['urls']['full']).content)                  
+   #         ml.append(types.InputMediaPhoto(n))
+    #        fl.append(n)
+        
+
+
+    #await msg.reply_media_group(ml)
+    
+    #await re.delete()
+    #for photo in fl:
+     #   os.remove(photo)
         
 
 
@@ -148,28 +162,39 @@ async def randomPhoto(c,msg: types.Message):
             return
 
 
-    re = await msg.reply('__Gathering...__')
+    re = await msg.reply('__Getting a random photo...__')
     results = requests.get(random_photos.format(count,access_key)).json()
     
     if not results:                                     # I think this three lines are not need...
         await re.edit('__Nothing Found.__')             # But just in case :)
         return
 
-    ml = []
-    fl = []
 
 
-    for _ in range(len(results)):
-        with open(n:=f"{results[_]['id']}.jpg",'wb') as img:
-            img.write(requests.get(results[_]['urls']['raw']).content)
-            ml.append(types.InputMediaPhoto(n))
-            fl.append(n)
 
-    await msg.reply_media_group(ml)
+    with open(n:=f"{results[0]['id']}.jpg",'wb') as img:
+        img.write(requests.get(results[0]['urls']['raw']).content)
+    
+    cap = results[0]['alt_description']
 
+    await msg.reply_photo(n,caption=(f'__{cap}__' if isinstance(cap,str) else ""))
     await re.delete()
-    for photo in fl:
-        os.remove(photo)
+    os.remove(n)
+    #ml = []
+    #fl = []
+
+
+#    for _ in range(len(results)):
+ #       with open(n:=f"{results[_]['id']}.jpg",'wb') as img:
+  #          img.write(requests.get(results[_]['urls']['raw']).content)
+   #         ml.append(types.InputMediaPhoto(n))
+    #        fl.append(n)
+
+    #await msg.reply_media_group(ml)
+
+    #await re.delete()
+    #for photo in fl:
+    #    os.remove(photo)
 
 
 
