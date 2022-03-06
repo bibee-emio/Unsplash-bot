@@ -20,8 +20,8 @@
         <td>Search photos on Unsplash.</td>
     </tr>
     <tr>
-        <td><code>/random | /rand < Count ></code></td>
-        <td>Get random photos from Unsplash <i>Specifying the <code>Count</code> is not important.<i></td>
+        <td><code>/random | /rand </code></td>
+        <td>Get random photos from Unsplash. </td>
     </tr>
 </table>
 
