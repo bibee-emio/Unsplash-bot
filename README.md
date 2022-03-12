@@ -1,10 +1,13 @@
+
+
 <h1>
 <p align=center>
+<b>Unsplash</b><sup>Bot</sup> <br>
 <img src="./unsplash-welcome.jpg">
 </p>
 </h1>
 
-<h2><b> Bot Usage</b> </h2>
+<h3><b> Bot Usage</b> </h3>
 
 <table>
     <tr>
@@ -25,7 +28,7 @@
     </tr>
 </table>
 
-<h2><b>Run Locally</b></h2>
+<h3><b>Run Locally</b></h3>
 
 * Clone the Repo.
 ```sh
@@ -45,7 +48,7 @@ pip3 install -r requirements.txt
 python3 bot.py
 ```
 
-<h2><b>Deploy to Heroku</b></h2>
+<h3><b>Deploy to Heroku</b></h3>
 
 * Click on the following button.
 
@@ -54,7 +57,7 @@ python3 bot.py
   style="padding:15px">
 </a>
 
-<h2><b>Special Credits</b></h2>
+<h3><b>Special Credits</b></h3>
 
 - [Pyrogram](https://github.com/pyrogram/pyrogram)
 - [Unsplash](https://unsplash.com/)
